@@ -1,9 +1,9 @@
-const fzpurl = "http://192.168.100.1:8037/fraud_prevention"
+const fzpurl = "http://127.0.0.1:8037/fraud_prevention"
 var app = getApp()
 
 module.exports={
   http:http,
-  hdpfurl:fzpurl,
+  fzpurl:fzpurl,
 }
 // 网络请求
 function http(url, method, data, succ, fail, com) {

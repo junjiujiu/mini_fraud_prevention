@@ -29,7 +29,6 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
@@ -41,7 +40,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.22.0",
   "appid": "wx8d862b55395852f5",
-  "projectname": "fraud_prevention1",
+  "projectname": "mini_fraud_prevention",
   "debugOptions": {
     "hidedInDevtools": []
   },

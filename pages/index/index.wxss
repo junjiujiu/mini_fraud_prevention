@@ -17,3 +17,68 @@
 .usermotto {
   margin-top: 200px;
 }
+/* 轮播图打盒子 */
+.rotation {
+  /* margin-top: 20rpx; */
+  width: 100%;
+  align-items: center;
+}
+
+.rotation_image{
+  height: 350rpx;
+  /* flex布局 */
+  display:flex; 
+  /* 水平轴线居中 */
+  justify-content: center;
+}
+
+.rotation_image image { 
+  /* height:100%; */
+  width: 100%;
+  }
+
+  .person_test {
+    /* margin-top: 20rpx; */
+    background-color: white;
+    height: 170rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 15rpx;
+    margin-bottom: 40rpx;
+    box-shadow: 0px 0px 15rpx 0px #afafaf;
+  }
+
+  .fraud_test {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+  }
+
+  .fraud_test_box1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 180rpx;
+    padding-bottom: 5rpx;
+  }
+  .fraud_test_img{
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .fraud_test_text{
+    top: 0;
+    width: 180rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .textmr{
+    font-size: 25rpx;
+    color: #808080;
+  }

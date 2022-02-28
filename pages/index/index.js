@@ -1,7 +1,6 @@
 // index.js
 
 const network = require("../../assets/js/network")
-
 // 获取应用实例
 const app = getApp()
 

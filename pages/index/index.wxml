@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar" bindtap="bindViewTap">
@@ -19,5 +19,43 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="contanir">
+<!-- 轮播图 -->
+  <view class="rotation">
+    <swiper class="rotation_image" indicator-dots="true" autoplay="true" interval="true" duration="true" interval="3000">
+      <swiper-item>
+        <image src="/assets/images/rotation.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/images/back_img2.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/images/back_img3.jpg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+<!-- 被骗指数和情景模拟 -->
+  <view class="person_test">
+  <!-- 被骗指数 -->
+    <view class="fraud_test" bindtap="fraud_test_btn">
+      <view class="fraud_test_box1">
+        <image class="fraud_test_img" src="/assets/images/fraud_test.png" mode="widthFix"></image>
+      </view>
+      <view class="fraud_test_text">
+        <text class="textmr">被骗测试</text>
+      </view>
+    </view>
+    <!-- 情景模拟 -->
+    <view class="fraud_test" bindtap="scenario_btn">
+      <view class="fraud_test_box1">
+        <image class="fraud_test_img" src="/assets/images/scenario.png" mode="widthFix"></image>
+      </view>
+      <view class="fraud_test_text">
+        <text class="textmr">情景模拟</text>
+      </view>
+    </view>
   </view>
 </view>

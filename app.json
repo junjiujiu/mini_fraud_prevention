@@ -1,15 +1,42 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/discern/discern"
   ],
   "window": {
+    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#002FA6",
+    "navigationBarTitleText": "诈骗信息识别预防宣传",
+    "navigationBarTextStyle": "white"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "style": "v2",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/assets/images/homeY.png",
+        "iconPath": "/assets/images/homeN.png",
+        "pagePath": "pages/index/index",
+        "text": "诈骗预防"
+      },
+      {
+        "selectedIconPath": "/assets/images/addY.jpg",
+        "iconPath": "/assets/images/addN.jpg",
+        "pagePath": "pages/discern/discern",
+        "text": "短信识别"
+      },
+      {
+        "selectedIconPath": "/assets/images/myY.png",
+        "iconPath": "/assets/images/myN.png",
+        "pagePath": "pages/my/my",
+        "text": "个人中心"
+      }
+    ]
+  }
 }
