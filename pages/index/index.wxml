@@ -1,13 +1,66 @@
 <!--index.wxml-->
-<!-- <view class="container">
-  <view class="userinfo">
+<view class="box">
+  <view class="">
     <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
+      <view class="contanir">
+      <!-- 轮播图 -->
+        <view class="rotation">
+          <swiper class="rotation_image" indicator-dots="true" autoplay="true" interval="true" duration="true" interval="3000">
+            <swiper-item>
+              <image src="/assets/images/rotation.jpg"></image>
+            </swiper-item>
+            <swiper-item>
+              <image src="/assets/images/back_img2.jpg"></image>
+            </swiper-item>
+            <swiper-item>
+              <image src="/assets/images/back_img3.jpg"></image>
+            </swiper-item>
+          </swiper>
+        </view>
+      <!-- 被骗指数和情景模拟 -->
+        <view class="person_test">
+        <!-- 被骗指数 -->
+          <view class="fraud_test" bindtap="fraud_test_btn">
+            <view class="fraud_test_box1">
+              <image class="fraud_test_img" src="/assets/images/fraud_test.png" mode="widthFix"></image>
+            </view>
+            <view class="fraud_test_text">
+              <text class="textmr">诈骗测试</text>
+            </view>
+          </view>
+          <!-- 情景模拟 -->
+          <view class="fraud_test" bindtap="scenario_btn">
+            <view class="fraud_test_box1">
+              <image class="fraud_test_img" src="/assets/images/scenario.png" mode="widthFix"></image>
+            </view>
+            <view class="fraud_test_text">
+              <text class="textmr">情景模拟</text>
+            </view>
+          </view>
+        </view>
+
+        <view>
+          <view class="recent">最新动态</view>
+          <block wx:if="{{recentNews.length==0}}"><view class="recentNews">最近没有新闻</view></block>
+          <block wx:else>
+            <view class="recentNews">
+              <!-- 最近新闻的渲染 -->
+              <view wx:for="{{recentNews}}" wx:key="key" wx:for-index="idx" class="recentNews_List">
+                <view class="rencentNewsCard" data-act="{{item}}" bindtap="recentNewsInfo">
+                  <view class="recentNewsCard_title"><text>{{item.title}}</text></view>
+                  <view class="recentNews_createtime_and_source">
+                    <view class="recentNewsCard_source"><text>{{item.source}}</text></view>
+                    <view class="recentNewsCard_createtime"><text>{{item.createTime}}</text></view>
+                  </view>
+                </view>
+                <view class="hr"></view>
+              </view>
+            </view>
+          </block>
+        </view>
       </view>
-      <open-data type="userNickName"></open-data>
     </block>
-    <block wx:elif="{{!hasUserInfo}}">
+    <block wx:elif="{{hasUserInfo==false}}">
       <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
       <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <view wx:else> 请使用1.4.4及以上版本基础库 </view>
@@ -16,46 +69,5 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
-<view class="contanir">
-<!-- 轮播图 -->
-  <view class="rotation">
-    <swiper class="rotation_image" indicator-dots="true" autoplay="true" interval="true" duration="true" interval="3000">
-      <swiper-item>
-        <image src="/assets/images/rotation.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/assets/images/back_img2.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/assets/images/back_img3.jpg"></image>
-      </swiper-item>
-    </swiper>
-  </view>
-
-<!-- 被骗指数和情景模拟 -->
-  <view class="person_test">
-  <!-- 被骗指数 -->
-    <view class="fraud_test" bindtap="fraud_test_btn">
-      <view class="fraud_test_box1">
-        <image class="fraud_test_img" src="/assets/images/fraud_test.png" mode="widthFix"></image>
-      </view>
-      <view class="fraud_test_text">
-        <text class="textmr">被骗测试</text>
-      </view>
-    </view>
-    <!-- 情景模拟 -->
-    <view class="fraud_test" bindtap="scenario_btn">
-      <view class="fraud_test_box1">
-        <image class="fraud_test_img" src="/assets/images/scenario.png" mode="widthFix"></image>
-      </view>
-      <view class="fraud_test_text">
-        <text class="textmr">情景模拟</text>
-      </view>
-    </view>
   </view>
 </view>

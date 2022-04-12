@@ -1,0 +1,75 @@
+/* pages/identifiedSMS/identifiedSMS.wxss */
+@import "../../assets/style/allstyle.wxss";
+
+.ActivityManagementOne{
+  /* margin: auto; */
+  width: 100%;
+}
+/* 识别过的信息的小卡片样式 */
+.MyMessageInfoCard{
+  background: white;
+  padding: 20rpx;
+  display: flex;
+  margin-bottom: 30rpx;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3rpx;
+  box-shadow: 15rpx 15rpx 20rpx -5rpx rgba(191, 191, 191, 0.5);
+}
+/* 识别过的信息的列表样式 */
+.MyMessageList{
+  margin: 30rpx 30rpx;
+  width: 90%;
+}
+.MyMessageList_title{
+  background-color: rgb(0, 45, 180);
+  color: #ffffff;
+  font-size: 35rpx;
+  height: 60rpx;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.MyMessageList_title1{
+  flex: 1;
+}
+.MyMessageList_title2{
+  flex: 5;
+}
+.MyMessageList_title3{
+  flex: 2;
+}
+.MyMessageInfoCard_content{
+  padding-bottom: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.MyMessageInfoCard_index{
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+.MyMessageInfoCard_index_text{
+  background-color: rgb(63, 106, 235);
+  color: #ffffff;
+  width: 50rpx;
+}
+.MyMessageInfoCard_messageInfo{
+  font-size: 35rpx;
+  padding: 10rpx;
+  flex: 5;
+}
+.MyMessageInfoCard_percentage{
+  flex: 2;
+  text-align: center;
+}

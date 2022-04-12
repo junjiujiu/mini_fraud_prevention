@@ -1,0 +1,18 @@
+<!--pages/recentNewsInfo/recentNewsInfo.wxml-->
+<view class="NewsInfo_box">
+  <view class="NewsInfo_title"><text>{{thisRecentNewsInfo.title}}</text></view>
+  <view class="NewsInfo_source_and_createTime">
+    <view class="NewsInfo_source"><text>{{thisRecentNewsInfo.source}}</text></view>
+    <view><text>{{thisRecentNewsInfo.createTime}}</text></view>
+  </view>
+  <block wx:if="{{thisRecentNewsInfo.img==null||thisRecentNewsInfo.img==''}}"></block>
+  <block wx:else>
+    <view class="NewsInfo_img">
+      <image src="{{thisRecentNewsInfo.img}}"></image>
+    </view>
+  </block>
+  <view class="NewsInfo_content"><text user-select="true">{{thisRecentNewsInfo.content}}</text></view>
+  <view class="NewsInfo_bottom_img">
+    <!-- <image src="/assets/images/bottom.png"></image> -->
+  </view>
+</view>

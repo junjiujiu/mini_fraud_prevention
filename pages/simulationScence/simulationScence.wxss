@@ -1,0 +1,99 @@
+/* pages/simulationScence/simulationScence.wxss */
+page{
+  background-color: #eee;
+}
+.van-nav-bar{
+  padding: 0 !important;
+}
+ 
+.server{
+  display: flex; 
+  padding: 2vw 11vw 2vw 2vw;
+}
+ 
+.see-server{
+  width: 11vw; 
+  height: 11vw;
+}
+ 
+.avatar{
+  width: 11vw; 
+  height: 11vw; 
+  border-radius: 10rpx;
+}
+ 
+.before-icon{
+  position: relative;
+  width: 4vw; 
+  height: 11vw; 
+  margin-left: 0.5vw; 
+  display: flex; 
+  align-items: center; 
+  z-index: 9;
+}
+ 
+.before-icon image{
+  width: 4vw;
+}
+ 
+.custom{
+  display: flex; 
+  justify-content: flex-end; 
+  padding: 2vw 2vw 2vw 11vw;
+}
+ 
+.inputRoom {
+  width: 100vw;
+  height: 16vw;
+  border-top: 1px solid #cdcdcd;
+  background-color: #f1f1f1;
+  padding-left: 50rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+ 
+input {
+  width: 76vw;
+  height: 9.33vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+ 
+.leftMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #fff;
+  margin-left: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
+}
+ 
+.rightMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #96EB6A;
+  margin-right: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
+}
+ 
+.site{
+  width: 100%; 
+  height: 18vw;
+}
+ 
+.footer{
+  width: 7vw; 
+  margin-left: 3.2vw;
+}

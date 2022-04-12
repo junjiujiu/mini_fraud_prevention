@@ -1,15 +1,15 @@
-const fzpurl = "http://127.0.0.1:8037/fraud_prevention"
+// const fraudurl = "http://192.168.31.240:8080/applet/api"
+const fraudurl = "http://82.156.24.143:9000/applet/api"
 var app = getApp()
 
 module.exports={
   http:http,
-  fzpurl:fzpurl,
+  fraudurl:fraudurl,
 }
 // 网络请求
 function http(url, method, data, succ, fail, com) {
-  // 小程序顶部显示Loading
   wx.request({
-    url: fzpurl + url,
+    url: fraudurl + url,
     method: method,
     data: data,
     header: {

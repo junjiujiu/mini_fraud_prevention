@@ -1,9 +1,18 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/my/my",
-    "pages/discern/discern"
+    "pages/discern/discern",
+    "pages/fraudCenterDetail/fraudCenterDetail",
+    "pages/identifiedSMS/identifiedSMS",
+    "pages/authorization/authorization",
+    "pages/recentNewsInfo/recentNewsInfo",
+    "pages/instructions/instructions",
+    "pages/fraudtest/fraudtest",
+    "pages/scenarioSimulation/scenarioSimulation",
+    "pages/classicCaseInfo/classicCaseInfo",
+    "pages/simulationScenceList/simulationScenceList",
+    "pages/simulationScence/simulationScence"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -26,8 +35,8 @@
         "text": "诈骗预防"
       },
       {
-        "selectedIconPath": "/assets/images/addY.jpg",
-        "iconPath": "/assets/images/addN.jpg",
+        "selectedIconPath": "/assets/images/discernY.png",
+        "iconPath": "/assets/images/discernN.png",
         "pagePath": "pages/discern/discern",
         "text": "短信识别"
       },

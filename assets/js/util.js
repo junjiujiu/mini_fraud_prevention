@@ -13,7 +13,15 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : `0${n}`
 }
-
+// 弹窗提示
+function showToast(title,icon="none",duration=2000){
+  wx.showToast({
+    title: title,
+    icon:icon,
+    duration:duration
+  })
+}
 module.exports = {
-  formatTime
+  formatTime: formatTime,
+  showToast:showToast,
 }

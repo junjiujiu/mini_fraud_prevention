@@ -1,0 +1,24 @@
+<!--pages/classicCaseInfo/classicCaseInfo.wxml-->
+<meta name="referrer" content="no-referrer" />
+<view class="NewsInfo_box">
+  <view class="NewsInfo_title"><text>{{thisClassicCaseInfo.title}}</text></view>
+  <view class="NewsInfo_source_and_createTime">
+    <view class="NewsInfo_source"><text>{{thisClassicCaseInfo.source}}</text></view>
+    <view><text>{{thisClassicCaseInfo.createTime}}</text></view>
+  </view>
+  <block wx:if="{{classicCaseImg.length==0}}"></block>
+  <block wx:else>
+    <view class="classicCaseInfo_img"  wx:for="{{classicCaseImg}}" wx:key="key" wx:for-index="idx">
+      <view data-act="{{item}}" style="width: 100%;">
+        {{item.id}}
+        <image src="https://images.weserv.nl/?url={{item.img}}" style="width: 100%;"></image>
+        <!-- <image src="https://images.weserv.nl/?url=https://pics7.baidu.com/feed/3812b31bb051f8195f3e866bb8106ae72e73e723.png?token=b1c461281abc2107f41b2b73751181d2"></image>
+        <image src="https://img-blog.csdnimg.cn/20210603003602293.png"></image> -->
+      </view>
+    </view>
+  </block>
+  <view class="NewsInfo_content"><text user-select="true">{{thisClassicCaseInfo.content}}</text></view>
+  <view class="NewsInfo_bottom_img">
+    <!-- <image src="/assets/images/bottom.png"></image> -->
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/simulationScenceList/simulationScenceList.wxml-->
+<view>
+  <view class="scenceList_colum">
+    <view class="scenceList_colum_one" bindtap="pretendLeader"><text>冒充领导</text></view>
+    <view class="scenceList_colum_one"><text>杀猪盘</text></view>
+  </view>
+  <view class="scenceList_colum">
+    <view class="scenceList_colum_one"><text>刷单</text></view>
+    <view class="scenceList_colum_one"><text>中奖</text></view>
+  </view>
+  <view class="scenceList_colum">
+    <view class="scenceList_colum_one"><text>贷款</text></view>
+    <view class="scenceList_colum_one"><text>冒充民警</text></view>
+  </view>
+  <view class="scenceList_colum">
+    <view class="scenceList_colum_one"><text>茶叶</text></view>
+    <view class="scenceList_colum_one"><text>盗号</text></view>
+  </view>
+</view>

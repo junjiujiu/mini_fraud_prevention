@@ -1,0 +1,29 @@
+<!--pages/scenarioSimulation/scenarioSimulation.wxml-->
+<view class="box1">
+  <view class="simulation_box">
+    <view class="simulation_back" bindtap="simulation">
+      <text>诈骗模拟场景</text>
+    </view>
+  </view>
+  <view>
+    <view class="ClassicCase_title">经典诈骗案例</view>
+    <view>
+      <block wx:if="{{classicCase.length==0}}"><view class="recentNews">最近没有经典案例</view></block>
+      <block wx:else>
+        <view class="recentNews">
+          <!-- 最近新闻的渲染 -->
+          <view wx:for="{{classicCase}}" wx:key="key" wx:for-index="idx" class="recentNews_List">
+            <view class="rencentNewsCard" data-act="{{item}}" bindtap="classicCaseInfo">
+              <view class="recentNewsCard_title"><text>{{item.title}}</text></view>
+              <view class="recentNews_createtime_and_source">
+                <view class="recentNewsCard_source"><text>{{item.source}}</text></view>
+                <view class="recentNewsCard_createtime"><text>{{item.createTime}}</text></view>
+              </view>
+            </view>
+            <view class="hr"></view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<!--pages/simulationScence/simulationScence.wxml-->
+<view>
+  <van-nav-bar left-arrow title="标题" bind:click-left="onClickLeft" />
+ 
+  <view>
+    <scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
+      <block wx:key="*this" wx:for='{{msgList}}' wx:for-index="index">
+ 
+        <!-- 单个消息1 客服发出（左） -->
+        <view wx:if='{{item.speaker=="server"}}' id='msg-{{index}}' class="server">
+          <view class="see-server">
+            <image class="avatar" src='../../assets/images/logo.png'>
+            </image>
+          </view>
+          <view class="before-icon">
+            <image src='{{item.content}}' mode='widthFix'></image>
+          </view>
+          <view class='leftMsg'>{{item.content}}</view>
+        </view>
+ 
+        <!-- 单个消息2 用户发出（右） -->
+        <view wx:else id='msg-{{index}}' class="custom">
+          <view class='rightMsg'>{{item.content}}</view>
+          <view class="before-icon">
+            <image src='{{picHead}}' mode='widthFix'></image>
+          </view>
+          <view style='width: 11vw; height: 11vw;'>
+            <image class="avatar" src='{{picHead}}'></image>
+          </view>
+        </view>
+      </block>
+      <!-- 占位 -->
+      <view class="site"></view>
+    </scroll-view>
+ 
+    <view class='inputRoom' style='bottom: {{inputBottom}}'>
+      <input 
+        bindconfirm='sendClick' 
+        adjust-position='{{false}}' 
+        value='{{inputVal}}' 
+        confirm-type='send'
+        bindfocus='focus' 
+        bindblur='blur'
+        class="send-input"
+      ></input>
+    </view>
+  </view>
+</view>

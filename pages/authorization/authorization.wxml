@@ -1,0 +1,15 @@
+<!--pages/authorization/authorization.wxml-->
+<view wx:if="{{canIUse}}">
+  <view class='header'>
+    <image src='/assets/images/logo1.png'></image>
+  </view>
+  <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <!-- <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo"> -->
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" type='primary' class='bottom' lang="zh_CN"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" > 获取头像昵称 </button>
+</view>
+<view wx:else>请升级微信版本</view>

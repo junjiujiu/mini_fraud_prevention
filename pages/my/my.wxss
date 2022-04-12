@@ -1,1 +1,207 @@
 /* pages/my/my.wxss */
+
+@import "../../assets/style/allstyle.wxss";
+/* 给的背景图能够获取头像的背景图的样式 */
+.my_head{
+  top:0;
+  left:0;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 350rpx;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%; 
+  background-image:url('https://s3.bmp.ovh/imgs/2022/04/06/2d63bb3bfb124db1.png');
+}
+/* 背景图的大小 */
+.bg-img{
+  width: 100%;
+  height: 300rpx;
+}
+/* 登录和让用户登录按钮显示头像昵称的盒子 */
+.userinfo1 {
+  width: 100%;
+  height: 140rpx;
+  padding-top: 200rpx;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+/* 显示用户头像的样式 */
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: transparent;
+}
+/* 头像和昵称的盒子样式 */
+.userinfo2{
+  margin-left: 60rpx;
+}
+.userinfo-avatar[size] {
+  width: 100rpx;
+}
+.userinfo-avatar:after {
+  border: none;
+}
+/* 昵称的样式 */
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #ffffff;
+  background-color: transparent;
+  background-size: cover;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 10px;
+}
+.userinfo-nickname::after {
+  border: none;
+}
+.userinfo-nickname-wrapper {
+  flex: 1;
+}
+/* “请登录”按钮的样式 */
+.login_btn{
+  background-color: transparent;
+  color: #ffffff;
+  width: 100%;
+  font-weight: 400;
+}
+/* 赛事管理的父盒子 */
+.my_shezhi{
+  background-color: white;
+  height: 170rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 15rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0px 0px 15rpx 0px #afafaf;
+}
+
+.fraud_num,.join{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.fraud_num_box1{
+  /* display: flex;
+  width: 180rpx; */
+  padding-bottom: 5rpx;
+  position: relative;
+  /* align-items: center; */
+}
+/* icon的样式盒子 */
+.join_box1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 180rpx;
+  padding-bottom: 5rpx;
+}
+/* 被诈骗指数数字样式 */
+.fraud_num_text{
+  width: 40px;
+  height: 24px;
+  position: absolute;
+  color: #002FA6;
+  font-weight: 600;
+  font-size: 32rpx;
+  left: 0;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+/* 整个大盒子button的样式 */
+.manager_btn{
+  background-color: transparent;
+}
+.manager_btn:hover{
+  background-color: transparent;
+}
+.fraud_num_img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.join_img{
+  width: 80rpx;
+  height: 80rpx;
+}
+/* 活动管理以及参与赛事对的文本样式 */
+.fraud_text,.join_text{
+  top: 0;
+  width: 180rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.textmr,.textjn{
+  font-size: 25rpx;
+  color: #808080;
+}
+/* 列表三个的样式 */
+.list{
+  width: 100%;
+}
+/* 三个列表盒子的样式 */
+/* .instructions,.name{
+  display: flex;
+  margin-left: 10rpx;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  background-color: rgb(255, 255, 255);
+} */
+.feedback,.instructions,.name{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  background-color: rgb(255, 255, 255);
+}
+.feedback_button{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: -30rpx;
+  height: 80rpx;
+  background-color: rgb(255, 255, 255);
+  font-size: 30rpx;
+}
+/* 三个列表中的文字的样式 */
+.text_inst{
+  flex: 9;
+  font-size: 28rpx;
+  font-weight: 500;
+  text-align: left;
+}
+/* 评委名的样式 */
+.judge{
+  width: 430rpx;
+  overflow:hidden;    
+  /* //超出一行文字自动隐藏 */
+  text-overflow:ellipsis; 
+  margin-right: 70rpx;
+  font-size: 25rpx;
+  text-align: right;
+  white-space:nowrap;
+  color: #808080;
+}
+.icon{
+  flex: 1;
+  margin-right: 20rpx;
+  font-size: 25rpx;
+  color: #808080;
+}
+.judgename_image{
+  width: 30rpx;
+  height: 30rpx;
+}

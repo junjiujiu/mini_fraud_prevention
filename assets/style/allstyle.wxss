@@ -1,0 +1,11 @@
+/* 水平线的样式 */
+.hr{
+  background: #E0E3DA;
+  width: 100%;
+  height: 1rpx;
+}
+/* 右箭头的样式 */
+.youjiantou{
+  width: 30rpx;
+  height: 30rpx;
+}

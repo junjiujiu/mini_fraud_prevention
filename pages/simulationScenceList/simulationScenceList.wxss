@@ -1,0 +1,35 @@
+/* pages/simulationScenceList/simulationScenceList.wxss */
+.scenceList_colum{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  height: 150rpx;
+  margin-top: 120rpx;
+  margin-bottom: 20rpx;
+}
+.scenceList_colum_one{
+  background-color: cornflowerblue;
+  color: aliceblue;
+  width: 200rpx;
+  height: 200rpx;
+  font-size: 39rpx;
+  flex: 1;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  display: flex;
+  padding-left: 30rpx;
+  align-items: center;
+  margin-top: 20rpx;
+  font-weight: 700;
+  justify-items: center;
+  box-shadow: 4px 4px 15rpx 4px #afafaf;
+  border: 4rpx solid #646464;
+  border-radius: 10rpx;
+}
+.scenceList_colum_one text{
+  text-align: center;
+}

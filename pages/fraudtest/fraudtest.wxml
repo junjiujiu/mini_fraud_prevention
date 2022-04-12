@@ -1,0 +1,41 @@
+<!--pages/fraudtest/fraudtest.wxml-->
+<view class="fraudtest_box">
+  <form  bindsubmit="submit" bindsubmit="calculateScore">
+  <view class='quest_container' wx:for="{{quest}}" wx:key="id" wx:for-index="outterIndex" name="question_topic">
+    <view class="question">
+      <text user-select="true">{{item.question}}</text>
+    </view>
+    <view wx:for="{{item.answers}}" wx:key="content" bindtap="answerSelected" data-outidx='{{outterIndex}}' data-idx="{{index}}" class="item {{item.selected?'active':''}}">
+      <text>{{item.index}}.</text>
+      <text> {{item.content}}</text>
+    </view>
+  </view>
+  <button class="submit_btn" form-type="submit">提交</button>
+</form>
+<!-- 确定提交测试 -->
+<view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap="cancelSetFraudScore"></view>
+    <view class="modalDlg" wx:if="{{showModal}}">
+      <text class="percentage_hint">您确定提交答案吗？</text>
+      <button bindtap="setFraudScore">确定</button>
+    </view>
+  </view>
+
+<!-- 全部都选弹窗 -->
+<view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal_fraudScore}}"></view>
+    <view class="modalDlg_fraudScore" wx:if="{{showModal_fraudScore}}">
+      <text class="percentage_hint">您的被诈骗指数为<text class="fraudScore_text">{{fraudScroe}}</text></text>
+      <text>温馨提示！！数值越大，表示您越容易被诈骗！</text>
+      <button bindtap="closeDialogue">确定</button>
+    </view>
+  </view>
+
+  <view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal_oneanswer}}"></view>
+    <view class="modalDlg" wx:if="{{showModal_oneanswer}}">
+      <text class="percentage_hint">请选择题{{question_number}}答案</text>
+      <button bindtap="closeHintForOneAnswer">确定</button>
+    </view>
+  </view>
+</view>

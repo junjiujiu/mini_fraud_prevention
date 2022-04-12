@@ -1,2 +1,64 @@
 <!--pages/discern/discern.wxml-->
-<text>pages/discern/discern.wxml</text>
+<view class="box">
+  <view class="discern_text"><text>诈骗短信识别</text></view>
+  <form bindsubmit="submit" bindsubmit="SetMessageData">
+    <view class="textarea_style">
+        <textarea placeholder="请粘贴您的短信内容" name="message_textarea"  class="textarea-bg"
+          placeholder-class="textarea_placeholder" maxlength="-1" value="{{messageInfo}}"></textarea>
+    </view>
+    <view class="button-sp-area">
+      <button form-type="submit" style="color: #000000;font-size:40rpx;width:200rpx;" type="default" plain="true"> 识别 </button>
+    </view>
+  </form>
+  <!-- 弹窗 -->
+  <view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modalDlg" wx:if="{{showModal}}">
+      <image src="/assets/images/logo1.png"></image>
+      <text class="percentage_hint">当前短信是诈骗短信的概率\n<text class="percentage_text">{{percentage}}%</text></text>
+      <button bindtap="closeDialogue">确定</button>
+    </view>
+  </view>
+  <view>
+    <view class="report_way">举报途径</view>
+    <view class="report_way_list">
+      <view class="fraud_center" bindtap="fraudCenter">
+        <view class="fraud_center_img_text">
+          <image class="fraud_center_img" src="/assets/images/fraudcenter.png" mode="widthFix"></image>
+          <view class="fraud_center_text">国家反诈中心</view>
+        </view>
+        <view class="fraud_center_brief">
+          <text decode="{{true}}">
+            &emsp;国家反诈中心是国务院打击治理电信网络新型违法犯罪工作部际联席会议合成作战平台，集资源整合、情报研判、侦查指挥为一体。
+          </text>
+        </view>
+      </view>
+      <view class="hr"></view>
+      <view class="fraud_center" bindtap="webPageReport">
+        <view class="fraud_center_img_text">
+          <image class="the12321_img" src="/assets/images/12321.png" mode="widthFix"></image>
+          <view class="fraud_center_text">12321网络不良与垃圾信息举报受理中心</view>
+        </view>
+        <view class="fraud_center_brief">
+          <text decode="{{true}}">
+            &emsp;负责协助工业和信息化部承担关于互联网、移动电话网、固定电话网等各种形式信息通信网络及电信业务中不良与垃圾信息的举报受理、调查分析以及查处工作。
+          </text>
+        </view>
+      </view>
+      <view class="hr"></view>
+      <view class="fraud_center" bindtap="CAC">
+        <view class="fraud_center_img_text">
+          <image class="fraud_center_img" src="/assets/images/wangxinbanlogo.png" mode="widthFix"></image>
+          <view class="fraud_center_text">中央网信办</view>
+        </view>
+        <view class="fraud_center_brief">
+          <text decode="{{true}}">
+            &emsp;中央网络安全和信息化委员会下设的办事机构
+          </text>
+        </view>
+      </view>
+    </view>
+       
+  </view>
+  
+</view>

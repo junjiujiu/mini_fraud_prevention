@@ -1,14 +1,14 @@
 // index.js
 
 const network = require("../../assets/js/network")
-// 获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
-    hasUserInfo: false,
+    recentNews:[],
+    // hasUserInfo: false,
+    blank:"\t",
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
@@ -20,35 +20,100 @@ Page({
     })
   },
   onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-    network.http("/users/newslist/","GET",{},
-      res =>{
-        console.log(res.data)
-    })
+    this.onLoginWx()
+    this.getRecentNews()
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
+  // 近期新闻
+  getRecentNews:function(){
+    network.http("/news/recentNews","GET",{type:1},res=>{
+      if(res.data.code==0){
+        // console.log(res.data.data)
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+          recentNews:res.data.data
         })
+        console.log("this.data.recentNews"+this.data.recentNews)
+        // 循环新闻列表
+        let that = this
+        for(var index = 0;index < this.data.recentNews.length;index++){
+          // console.log(this.data.recentNews[index].createTime)
+          let recentNews_createTime = this.data.recentNews[index].createTime
+          // 更换T为空格
+          recentNews_createTime = recentNews_createTime.replace(/T/g,this.data.blank)
+          this.data.recentNews[index].createTime = recentNews_createTime
+        }
+        that.setData({
+          recentNews:this.data.recentNews
+        })
+        // console.log("新闻列表"+this.data.recentNews)
       }
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
+  // 登录逻辑
+  onLoginWx:function(){
+    let that = this
+    // if(app.globalData.hasUserInfo==false){
+      wx.login({
+        success(res){
+          network.http("/user/login","POST",{
+            code:res.code
+          },res =>{
+            if(res.data.code==0){
+              that.setData({
+                userid : res.data.data.userid
+              })
+              app.globalData.userid = res.data.data.userid
+              // 查询某个id的基本用户信息
+              network.http("/user/"+app.globalData.userid,"GET",{},res=>{
+                if(res.data.code==0){
+                  that.setData({
+                    userInfo:res.data.data
+                  })
+                  app.globalData.userInfo = res.data.data
+                  console.log(that.data.userInfo)
+                  // 获取新闻信息
+                }
+                // this.getRecentNews()
+              })
+            }
+            // 如果没有授权则跳转授权界面
+            else{
+              wx.navigateTo({
+                url: '/pages/authorization/authorization',
+              })
+            }
+          })
+        }
+      })
+  },
+
+  // 单击跳转详情页
+  recentNewsInfo:function(e){
     console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    app.globalData.oneRecentNewsInfo = e.currentTarget.dataset.act
+    console.log(app.globalData.oneRecentNewsInfo)
+    wx.navigateTo({
+      url: '/pages/recentNewsInfo/recentNewsInfo',
+    })
+
+  },
+  // 跳转使用说明
+  instructions(){
+    wx.navigateTo({
+      url: '/pages/instructions/instructions',
+    })
+  },
+
+  // 诈骗测试跳转
+  fraud_test_btn(){
+    wx.navigateTo({
+      url: '/pages/fraudtest/fraudtest',
+    })
+  },
+
+  // 情景模拟跳转
+  scenario_btn(){
+    wx.navigateTo({
+      url: '/pages/scenarioSimulation/scenarioSimulation',
     })
   }
 })

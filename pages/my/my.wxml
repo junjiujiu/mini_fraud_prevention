@@ -1,78 +1,80 @@
 <!--pages/my/my.wxml-->
 
-<!-- <view class="contanir">
+<!--miniprogram/pages/my/my.wxml-->
+<view class="contanir">
   <view class="my_head">
     <view class="userinfo1">
+      <!-- <block wx:if="{{!hasUserInfo && canIUse}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login_btn"
+          style="width: 100%;">请登录</button>
+      </block>  -->
+      <!-- <block wx:else> -->
       <view class="userinfo2">
-        <button class="userinfo-avatar" style="background-image: url({{user.avatarurl}})" size="default"></button>
+        <button class="userinfo-avatar" style="background-image: url({{userInfo.avatarUrl}})" size="default"></button>
       </view>
       <view class="userinfo-nickname-wrapper">
-        <text class="userinfo-nickname">{{user.nickname}}</text>
+        <text class="userinfo-nickname">{{userInfo.userName}}</text>
       </view>
+      <!-- </block> -->
     </view>
+    <!-- <image class="bg-img" mode="widthFix"></image> -->
   </view>
   <view class="my_shezhi">
-    <view class="mananger" bindtap="manager_btn">
-      <view class="mananger_box1">
-        <image class="mananger_img" src="/assets/images/mananger.png" mode="widthFix"></image>
+    <view class="fraud_num" bindtap="manager_btn">
+      <view class="fraud_num_box1">
+        <image class="fraud_num_img" src="/assets/images/circle1.png" mode="aspectFill"></image>
+        <text class="fraud_num_text">{{userInfo.swindledNum}}</text>
       </view>
-      <view class="mananger_text">
-        <text class="textmr">活动管理</text>
+      <view class="fraud_text">
+        <text class="textmr">易被诈骗指数</text>
       </view>
     </view>
-    <view class="join" bindtap="join_btn">
+    <view class="join" bindtap="identified_SMS_btn">
       <view class="join_box1">
-        <image class="join_img" src="/assets/images/join.png" mode="widthFix"></image>
+        <image class="join_img" src="/assets/images/mananger.png" mode="widthFix"></image>
       </view>
       <view class="join_text">
-        <text class="textjn">参与活动</text>
+        <text class="textjn">识别的短信</text>
       </view>
     </view>
   </view>
   <view class="list">
-    <view class="name" style="width:100%" bindtap="judgeNameInput">
-      <view class="text_inst">
-        <image src="/assets/images/basic_paperplane1.png" class="judgename_image"></image>
-        我的评委名
-      </view>
-      <view class="judge">
-        {{user.judgename}}
-      </view>
-    </view>
     <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!isClick}}"></view>
-    <form class="modal-dialog" wx:if="{{!isClick}}" bindsubmit="submit" bindsubmit="onConfirm">
-      <view class="modal-title">请输入您的评委名</view>
-      <view class="modal-content">
-        <view class="modal-input">
-          <text class="model_text2">您的评委名</text>
-          <input placeholder-class="input-holder" maxlength="10" bindinput="inputChange" class="input"
-            placeholder="请输入评委名" value="{{judgeName}}" name="judgeName" type="text" maxlength="-1"></input>
-        </view>
-      </view>
-      <view class="modal-footer">
-        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">清空</view>
-        <button class="btn-confirm" data-status="confirm" form-type="submit" style="width:50%">确定</button>
-      </view>
-    </form>
     <view class="hr"></view>
     <view class="instructions" style="width:100%" bindtap="instructions">
-      <view class="text_inst">
-        <image src="/assets/images/basic_paperplane2.png" class="judgename_image"></image>
-        使用说明
-      </view>
-      <view class="icon">
-        <image class="youjiantou" src="/assets/images/xiangyou.png"></image>
-      </view>
+      <button class="feedback_button"  style="width: 100%;">
+        <view class="text_inst">
+          <image src="/assets/images/basic_paperplane3.png" class="judgename_image"></image>
+          使用说明
+        </view>
+        <view class="icon">
+          <image class="youjiantou" src="/assets/images/xiangyou.png"></image>
+        </view>
+      </button>
     </view>
     <view class="hr"></view>
-    <view class="feedback" bindtap="suggestionFeedback">
-      <view class="text_inst">
-        <image src="/assets/images/basic_paperplane3.png" class="judgename_image"></image>
-        意见反馈
-      </view>
-      <view class="icon">
-        <image class="youjiantou" src="/assets/images/xiangyou.png"></image>
-      </view>
+    <view class="feedback">
+      <button open-type='feedback' class="feedback_button" style="width: 100%;">
+        <view class="text_inst">
+          <image src="/assets/images/basic_paperplane3.png" class="judgename_image"></image>
+          意见反馈
+        </view>
+        <view class="icon">
+          <image class="youjiantou" src="/assets/images/xiangyou.png"></image>
+        </view>
+      </button>
+    </view>
+    <view class="hr"></view>
+    <view class="instructions" bindtap="suggestionFeedback">
+      <button class="feedback_button"  style="width: 100%;">
+        <view class="text_inst">
+          <image src="/assets/images/basic_paperplane3.png" class="judgename_image"></image>
+          关于我们
+        </view>
+        <view class="icon">
+          <image class="youjiantou" src="/assets/images/xiangyou.png"></image>
+        </view>
+      </button>
     </view>
   </view>
-</view> -->
+</view>

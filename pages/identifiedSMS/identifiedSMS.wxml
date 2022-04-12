@@ -1,0 +1,25 @@
+<!--pages/identifiedSMS/identifiedSMS.wxml-->
+
+<view  class="nojudge" wx:if="{{myMessage.length == 0}}">您还没有识别过短信哦~~</view>
+<block wx:else>
+    <view wx:for="{{myMessage}}" class="MyMessageList" wx:key="key" wx:for-index="idx">
+      <view data-act="{{item}}" class="MyMessageInfoCard">
+        <view class="MyMessageList_title">
+          <view class="MyMessageList_title1"><text>序号</text></view>
+          <view class="MyMessageList_title2"><text>信息内容</text></view>
+          <view class="MyMessageList_title3"><text>概率</text></view>
+        </view>
+        <view class="MyMessageInfoCard_content">
+          <view class="MyMessageInfoCard_index">
+            <text class="MyMessageInfoCard_index_text">{{idx+1}}</text>
+          </view>
+          <view class="MyMessageInfoCard_messageInfo">
+            <text decode="{{true}}"> &emsp;{{item.messageInfo}}</text>
+          </view>
+          <view class="MyMessageInfoCard_percentage">
+            <text>{{item.percentage}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+</block>

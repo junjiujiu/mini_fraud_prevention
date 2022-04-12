@@ -1,4 +1,8 @@
 /**index.wxss**/
+@import "../../assets/style/allstyle.wxss";
+.box{
+  background-color: #f4f4f4;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -23,7 +27,7 @@
   width: 100%;
   align-items: center;
 }
-
+/* 轮播图布局 */
 .rotation_image{
   height: 350rpx;
   /* flex布局 */
@@ -31,12 +35,12 @@
   /* 水平轴线居中 */
   justify-content: center;
 }
-
+/* 轮播图宽度 */
 .rotation_image image { 
   /* height:100%; */
   width: 100%;
   }
-
+  /* 被骗指数和情景模拟 */
   .person_test {
     /* margin-top: 20rpx; */
     background-color: white;
@@ -48,7 +52,7 @@
     margin-bottom: 40rpx;
     box-shadow: 0px 0px 15rpx 0px #afafaf;
   }
-
+/* 诈骗测试盒子 */
   .fraud_test {
     width: 50%;
     display: flex;
@@ -57,7 +61,7 @@
     padding-left: 50rpx;
     padding-right: 50rpx;
   }
-
+/* 诈骗测试中的图片盒子 */
   .fraud_test_box1{
     display: flex;
     align-items: center;
@@ -65,11 +69,12 @@
     width: 180rpx;
     padding-bottom: 5rpx;
   }
+  /* 诈骗测试图片大小 */
   .fraud_test_img{
     width: 100rpx;
     height: 100rpx;
   }
-
+/* 诈骗测试文字 */
   .fraud_test_text{
     top: 0;
     width: 180rpx;
@@ -80,5 +85,46 @@
 
   .textmr{
     font-size: 25rpx;
-    color: #808080;
+    color: #555555;
+  }
+  .recent{
+    font-size: 38rpx;
+  }
+  /* 新闻的大盒子 */
+  .recentNews{
+    background-color: #ffffff;
+    /* width: 95%; */
+    border-radius: 25rpx;
+    margin: 20rpx;
+    padding: 20rpx;
+  }
+/* 单个新闻的样式 */
+  .rencentNewsCard{
+    padding-bottom: 25rpx;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+  /* 新闻标题样式 */
+  .recentNewsCard_title{
+    font-size: 41rpx;
+    padding-bottom: 10rpx;
+  }
+  /* 新闻来源样式 */
+  .recentNewsCard_source{
+    font-size: 28rpx;
+    color: #8e8e8e;
+    /* padding-right: 50rpx; */
+  }
+  /* 新闻创建时间 */
+  .recentNewsCard_createtime{
+    font-size: 28rpx;
+    color: #8e8e8e;
+  }
+  .recentNews_createtime_and_source{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
   }

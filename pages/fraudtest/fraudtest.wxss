@@ -1,0 +1,110 @@
+/* pages/fraudtest/fraudtest.wxss */
+/* 页面样式 */
+.fraudtest_box{
+  padding-top: 20rpx;
+  /* background-image: url("https://img0.baidu.com/it/u=2099351662,2171912031&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=839"); */
+  background-color: rgba(149, 212, 255, 0.377);
+  /* background-repeat: no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;  */
+  padding-bottom: 40rpx;
+}
+/* 题目样式 */
+.quest_container {
+  padding: 20rpx;
+  border: 1px solid #0a43d4;
+  /* margin-top: 20rpx; */
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.question{
+  font-weight: 500;
+  font-size: 40rpx;
+}
+ 
+/* 选项的样式 */
+.item {
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  margin-left: 30rpx;
+  font-size: 35rpx;
+}
+ /* 点击选项后的样式 */
+.active {
+  color: rgb(255, 255, 255);
+  padding-top: 10rpx;
+  background-color: #2460f7;
+  padding-bottom: 10rpx;
+}
+ 
+/* 按钮的样式 */
+.submit_btn {
+  background: #2460f7;
+  color: white;
+  margin: 50rpx;
+  padding: 25rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+/* 弹窗盒子 */
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.6;
+ }
+ /* 弹窗 */
+ .modalDlg{
+  width: 480rpx;
+  height: 220rpx;
+  padding-top: 40rpx;
+  position: fixed;
+  font-size: 36rpx;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 105rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ }
+ .modalDlg_fraudScore{
+  width: 500rpx;
+  height: 350rpx;
+  padding-top: 40rpx;
+  position: fixed;
+  font-size: 36rpx;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 105rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ }
+ .fraudScore_text{
+   font-size: 40rpx;
+   color: #002FA6;
+ }
+
+ /* 弹窗里面的按钮 */
+ .modalDlg button,.modalDlg_fraudScore button{
+   margin-top: 20rpx;
+   margin-bottom: 20rpx;
+   border-radius: 10rpx;
+   font-size: 34rpx;
+   background-color: #002FA6;
+   color: #ffffff;
+ }

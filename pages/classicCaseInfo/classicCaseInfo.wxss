@@ -1,0 +1,5 @@
+/* pages/classicCaseInfo/classicCaseInfo.wxss */
+@import "../../pages/recentNewsInfo/recentNewsInfo.wxss";
+.classicCaseInfo_img{
+  width: 100%;
+}

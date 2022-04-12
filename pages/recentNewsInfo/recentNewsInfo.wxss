@@ -1,0 +1,48 @@
+/* pages/recentNewsInfo/recentNewsInfo.wxss */
+.NewsInfo_box{
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx;
+  padding-top: 20rpx;
+}
+/* 新闻总结的样式 */
+.NewsInfo_title{
+  font-size: 45rpx;
+  font-weight: 700;
+}
+/* 新闻来源和创建时间 */
+.NewsInfo_source_and_createTime{
+  display: flex;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  flex-direction: row;
+  color: #8e8e8e;
+  padding-left: 10rpx;
+}
+/* 新闻内容样式 */
+.NewsInfo_content{
+  margin: 15rpx;
+  line-height:30px;
+}
+/* 新闻来源source样式 */
+.NewsInfo_source{
+  color: #8e8e8e;
+  padding-right: 40rpx;
+}
+/* 新闻中的图片 */
+.NewsInfo_img{
+  margin: auto;
+}
+.NewsInfo_img img{
+  width: 100%;
+}
+.NewsInfo_bottom_img{
+  width: 100%;
+  height: 280rpx;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%; 
+  background-repeat: no-repeat;
+  margin-bottom: 50rpx;
+  margin-top: 20rpx;
+  background-image:url('https://s3.bmp.ovh/imgs/2022/04/09/6a232b7b85c0054f.png');
+}
