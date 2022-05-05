@@ -12,18 +12,57 @@
             <image class="avatar" src='../../assets/images/logo.png'>
             </image>
           </view>
+          <!-- <view class="before-icon">
+            <image src='{{item.content}}' mode='widthFix'></image>
+          </view> -->
+          <view class='leftMsg'>{{item.content}}</view>
+        </view>
+        
+         <!-- 单个消息1 客服发出（左）t图片 -->
+         <view wx:if='{{item.speaker=="img1"}}' id='msg-{{index}}' class="server">
+          <view class="see-server">
+            <image class="avatar" src='../../assets/images/logo.png'>
+            </image>
+          </view>
           <view class="before-icon">
             <image src='{{item.content}}' mode='widthFix'></image>
           </view>
-          <view class='leftMsg'>{{item.content}}</view>
+          <!-- <view class='leftMsg'>{{item.content}}</view> -->
         </view>
- 
-        <!-- 单个消息2 用户发出（右） -->
-        <view wx:else id='msg-{{index}}' class="custom">
-          <view class='rightMsg'>{{item.content}}</view>
+
+        <!-- 提示消息 -->
+        <view  wx:if='{{item.speaker=="hint"}}'  id='msg-{{index}}' style="text-align: center;color: silver;padding-top: 10rpx;padding-bottom: 10rpx;">
+        <view>{{item.content}}</view>
+        </view>
+
+        <!-- 单个消息2 用户发出（右）图片 -->
+        <view wx:if='{{item.speaker=="img2"}}' id='msg-{{index}}' class="custom_img2">
+          <!-- <view class='rightMsg'>{{item.content}}</view> -->
           <view class="before-icon">
-            <image src='{{picHead}}' mode='widthFix'></image>
+            <image src='{{item.content}}' mode='widthFix'></image>
           </view>
+          <view style='width: 11vw; height: 11vw;'>
+            <image class="avatar" src='{{picHead}}'></image>
+          </view>
+        </view>
+
+        <!-- 单个消息2 用户发出（右）图片 -->
+        <view wx:if='{{item.speaker=="img3"}}' id='msg-{{index}}' class="custom_img3">
+          <!-- <view class='rightMsg'>{{item.content}}</view> -->
+          <view class="before_icon_img3">
+            <image src='{{item.content}}' mode='widthFix'></image>
+          </view>
+          <view style='width: 11vw; height: 11vw;'>
+            <image class="avatar" src='{{picHead}}'></image>
+          </view>
+        </view>
+
+        <!-- 单个消息2 用户发出（右） -->
+        <view wx:if='{{item.speaker=="customer"}}' id='msg-{{index}}' class="custom">
+          <view class='rightMsg'>{{item.content}}</view>
+          <!-- <view class="before-icon">
+            <image src='{{picHead}}' mode='widthFix'></image>
+          </view> -->
           <view style='width: 11vw; height: 11vw;'>
             <image class="avatar" src='{{picHead}}'></image>
           </view>
@@ -34,7 +73,8 @@
     </scroll-view>
  
     <view class='inputRoom' style='bottom: {{inputBottom}}'>
-      <input 
+    <view class="send_input" bindtap="isDep"></view>
+      <!-- <input 
         bindconfirm='sendClick' 
         adjust-position='{{false}}' 
         value='{{inputVal}}' 
@@ -42,7 +82,55 @@
         bindfocus='focus' 
         bindblur='blur'
         class="send-input"
-      ></input>
+      ></input> -->
     </view>
   </view>
+
+  <view style="background:white;width:100%;height:auto;padding:20px 14px;">
+    <!-- 复选弹框列表 -->
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{isDep}}"></view>
+    <view class='typeListBox' wx:if="{{isDep}}">
+      <view class='wrap'>
+        <view class='checkbox_con'>
+          <text style="width: 100%; color: #031191; text-align: center; position: absolute; left: 0px; top: -28px;font-size: 17px; font-weight: bold;padding: 3px;margin: 0px;">该怎么回复呢</text>
+
+          <scroll-view scroll-y style="height: 300rpx;" scroll-top="{{scrollTop}}">
+            <radio-group bindchange="checkboxChange" class="radio_group">
+              <view wx:for="{{checkboxArr}}" wx:key="item.name" >
+                <view style="height: 15rpx;"></view>
+                <label bindtap='checkbox' data-index="{{index}}">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" id="radios" />
+                  <text style="font-size: 35rpx;">{{item.name}}</text>
+                </label>
+              </view>
+            </radio-group>
+          </scroll-view>
+        </view>
+        <view class='btn1'>
+          <button class='bgFFF' bindtap='cancel' plain="true">取消</button>
+          <button class='bgconfirm' bindtap='confirm'>确定</button>
+        </view>
+      </view>
+    </view>
+    <!-- <text style="color:#e91e63;font-size:18px;padding:10px;">所选科目：{{fpTypeText}}</text> -->
+  </view>
+  <!-- <button catchtap='isDep'>点击选择今日所学科目，可多选</button> -->
+
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{msgList.length==71}}"></view>
+    <view class='typeListBox' wx:if="{{msgList.length==71}}">
+      <view class='wrap'>
+        <view class='checkbox_con'>
+          <scroll-view scroll-y style="height: 500rpx;" scroll-top="{{scrollTop}}">
+          <text style="font-weight: 600;font-size: 50rpx;color: red;">你被骗了！！</text>
+          <text style="font-weight: 600;font-size: 50rpx;color: red;">赶紧报警！！</text>
+          <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinakd2020713s%2F549%2Fw675h674%2F20200713%2Ff011-iwhseiu1041793.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654323927&t=5a0abf00fb860feba52b61fbed9b7dae" style="width: 100%;height: 400rpx;margin-top: 20rpx;"></image>
+          </scroll-view>
+        </view>
+        <view class='btn1'>
+          <button class='bgFFF' bindtap='cancel_cancle' plain="true">确定</button>
+          <!-- <button class='bgconfirm' bindtap='confirm'>确定</button> -->
+        </view>
+      </view>
+    </view>
+
 </view>

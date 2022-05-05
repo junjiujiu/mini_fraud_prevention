@@ -5,30 +5,54 @@
   width: 100%;
   background-color: #f4f4f4;
 }
-.ClassicCase_title{
-  font-size: 40rpx;
-}
 .simulation_box{
   margin-left: 70rpx;
   margin-right: 70rpx;
   padding-top: 30rpx;
   align-items: center;
-  height: 300rpx;
+  height: 400rpx;
   margin-bottom: 80rpx;
 }
 .simulation_back{
   margin-top: 30rpx;
   width: 100%;
-  height: 300rpx;
+  height: 400rpx;
   border-radius: 50%/50%;
-  margin-bottom: 30rpx;
+  margin-bottom: 130rpx;
   border: 2rpx solid #0a43d4;
   background-color: rgba(152, 205, 255, 0.74);
   align-items: center;
   text-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.simulation_back image{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 400rpx;
+  border-radius: 50%/50%;
+  margin-bottom: 30rpx;
+  border: 2rpx solid #0a43d4;
+  position: absolute;
+  opacity:0.3;
+  /* width: 100%; */
+  /* height: 600rpx; */
 }
 .simulation_back text{
   font-size: 48rpx;
+  position: absolute;
+  z-index: 1;
+  color: #0a43d4;
+  font-weight: 800;
+}
+
+
+.ClassicCase_title{
+  font-size: 43rpx;
+  font-weight: 600;
+}
+.ClassicCaseList{
+  margin-top: 40rpx;
+  padding-bottom: 30rpx;
 }

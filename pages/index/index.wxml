@@ -39,7 +39,7 @@
           </view>
         </view>
 
-        <view>
+        <view style="padding-bottom: 30rpx;">
           <view class="recent">最新动态</view>
           <block wx:if="{{recentNews.length==0}}"><view class="recentNews">最近没有新闻</view></block>
           <block wx:else>

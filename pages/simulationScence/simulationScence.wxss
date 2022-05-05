@@ -24,18 +24,33 @@ page{
  
 .before-icon{
   position: relative;
-  width: 4vw; 
+  width: 300rpx; 
   height: 11vw; 
   margin-left: 0.5vw; 
   display: flex; 
   align-items: center; 
   z-index: 9;
+  margin-top: 25rpx;
+  margin-bottom: 30rpx;
+}
+
+.before_icon_img3{
+  position: relative;
+  width: 300rpx; 
+  height: 65vw; 
+  margin-left: 0.5vw; 
+  display: flex; 
+  align-items: center; 
+  z-index: 9;
+  margin-top: 25rpx;
+  margin-bottom: 30rpx;
 }
  
 .before-icon image{
-  width: 4vw;
+  width: 300rpx;
+  /* height: 300rpx; */
 }
- 
+
 .custom{
   display: flex; 
   justify-content: flex-end; 
@@ -54,7 +69,28 @@ page{
   align-items: center;
   z-index: 20;
 }
- 
+
+.send_input{
+  width: 76vw;
+  height: 9.33vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+.custom_img2,.custom_img3{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex; 
+  justify-content: flex-end; 
+  padding: 2vw 2vw 2vw 11vw;
+}
+.custom_img3 image{
+  width: 250rpx;
+  height: 600rpx;
+}
 input {
   width: 76vw;
   height: 9.33vw;
@@ -96,4 +132,53 @@ input {
 .footer{
   width: 7vw; 
   margin-left: 3.2vw;
-}
+} 
+/* 弹窗盒子 */
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.4;
+ }
+ .typeListBox{
+  width: 90%;
+  position: fixed;
+  top: 300rpx;
+  /* left: 0; */
+  z-index: 9999;
+  /* margin: -170rpx 85rpx; */
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+ }
+ .checkbox_con{
+   /* background-color: #fff; */
+ }
+ .wrap{
+   width: 100%;
+   margin: 30rpx;
+ }
+ .radio_group{
+   font-size: 35rpx;
+ }
+ .btn1{
+   width: 90%;
+   display: flex;
+   flex-direction: row;
+   margin-left: 20rpx;
+   margin-bottom: 10rpx;
+ }
+ .btn1 button{
+   flex: 1;
+   margin: 10rpx;
+ }
+ .bgconfirm{
+  background-color: #002FA6;
+  color: #fff;
+ }
+
+ 

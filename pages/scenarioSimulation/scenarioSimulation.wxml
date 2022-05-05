@@ -2,10 +2,11 @@
 <view class="box1">
   <view class="simulation_box">
     <view class="simulation_back" bindtap="simulation">
+    <image src="https://s3.bmp.ovh/imgs/2022/05/04/75f95bba8413075b.png"></image>
       <text>诈骗模拟场景</text>
     </view>
   </view>
-  <view>
+  <view class="ClassicCaseList">
     <view class="ClassicCase_title">经典诈骗案例</view>
     <view>
       <block wx:if="{{classicCase.length==0}}"><view class="recentNews">最近没有经典案例</view></block>

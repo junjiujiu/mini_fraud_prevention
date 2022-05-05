@@ -1,19 +1,36 @@
 <!--pages/simulationScenceList/simulationScenceList.wxml-->
 <view>
-  <view class="scenceList_colum">
-    <view class="scenceList_colum_one" bindtap="pretendLeader"><text>冒充领导</text></view>
+  <view class="taobaolist">
+    <block wx:for="{{imagelist}}" wx:key="item">
+      <view class="taobao-list">
+        <view class="taobao-list-info" index="{{index}}" bindtap="pretendLeader">
+        <image class="taobao-list-photo" src="{{item.imageUrl}}"/>
+        <text class="taobao-list-desc">{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- <view class="scenceList_colum">
+    <view class="scenceList_colum_one" bindtap="pretendLeader">
+      <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimagepphcloud.thepaper.cn%2Fpph%2Fimage%2F150%2F585%2F505.jpg&refer=http%3A%2F%2Fimagepphcloud.thepaper.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654251500&t=8f484625ee0973f3bfe44bb07f9d1950"></image>
+    </view>
+      <text>冒充领导</text>
+    <view class="scenceList_colum_void"></view>
     <view class="scenceList_colum_one"><text>杀猪盘</text></view>
   </view>
   <view class="scenceList_colum">
     <view class="scenceList_colum_one"><text>刷单</text></view>
+    <view class="scenceList_colum_void"></view>
     <view class="scenceList_colum_one"><text>中奖</text></view>
   </view>
   <view class="scenceList_colum">
     <view class="scenceList_colum_one"><text>贷款</text></view>
+    <view class="scenceList_colum_void"></view>
     <view class="scenceList_colum_one"><text>冒充民警</text></view>
   </view>
   <view class="scenceList_colum">
     <view class="scenceList_colum_one"><text>茶叶</text></view>
+    <view class="scenceList_colum_void"></view>
     <view class="scenceList_colum_one"><text>盗号</text></view>
-  </view>
+  </view> -->
 </view>

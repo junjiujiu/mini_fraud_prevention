@@ -5,31 +5,73 @@
   align-items: center;
   justify-items: center;
   text-align: center;
-  height: 150rpx;
-  margin-top: 120rpx;
+  /* height: 150rpx; */
+  margin-top: 10rpx;
   margin-bottom: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+.scenceList_colum_void{
+  flex: 1;
 }
 .scenceList_colum_one{
   background-color: cornflowerblue;
   color: aliceblue;
-  width: 200rpx;
-  height: 200rpx;
+  width: 300rpx;
+  height: 300rpx;
   font-size: 39rpx;
-  flex: 1;
-  margin-left: 80rpx;
-  margin-right: 80rpx;
+  flex: 5;
   margin-bottom: 20rpx;
   text-align: center;
   display: flex;
-  padding-left: 30rpx;
+  /* padding-left: 30rpx; */
   align-items: center;
   margin-top: 20rpx;
   font-weight: 700;
   justify-items: center;
-  box-shadow: 4px 4px 15rpx 4px #afafaf;
+  box-shadow: 4px 4px 15rpx 1px #afafaf;
   border: 4rpx solid #646464;
   border-radius: 10rpx;
+  position: relative;
 }
 .scenceList_colum_one text{
   text-align: center;
+  position: absolute;
+  z-index: 1;
 }
+.scenceList_colum_one image{
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  opacity:0.7;
+  /* z-index: -1; */
+}
+.taobaolist{
+  margin-top: 20rpx;
+ }
+ .taobao-list{
+ }
+ .taobao-list-info{
+  float: left;
+  margin-left: 20rpx;
+  border: 1rpx solid #646464;
+  margin-top: 20rpx;
+  margin-bottom: 75rpx;
+  position: relative;
+ }
+ 
+ .taobao-list-photo{
+  width: 350rpx;
+  height: 350rpx;
+ }
+ .taobao-list-desc{
+  display: block;
+  position: absolute;
+  color: #000000;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  padding: 10rpx;
+  
+ }
