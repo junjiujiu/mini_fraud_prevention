@@ -1,5 +1,4 @@
 // const fraudurl = "http://192.168.31.240:8080/applet/api"
-const fraudurl = "http://82.156.24.143:9000/applet/api"
 var app = getApp()
 
 module.exports={
